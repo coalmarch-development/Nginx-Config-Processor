@@ -12,13 +12,12 @@
 
 namespace RomanPitak\Nginx\Config;
 
-class Scope extends Printable
+class Scope extends Printable implements \Iterator
 {
+    use ScopeIterator;
+
     /** @var Directive $parentDirective */
     private $parentDirective = null;
-
-    /** @var Directive[] $directives */
-    private $directives = array();
 
     /** @var Printable[] $printables */
     private $printables = array();

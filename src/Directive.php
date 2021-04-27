@@ -231,6 +231,22 @@ class Directive extends Printable
         return (!$this->getComment()->isEmpty());
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+
     /*
      * ========== Setters ==========
      */
@@ -292,6 +308,26 @@ class Directive extends Printable
     public function setCommentText($text)
     {
         $this->getComment()->setText($text);
+        return $this;
+    }
+
+    /**
+     * @param string $name
+     * @return Directive
+     */
+    public function setName($name): Directive
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @param string $value
+     * @return Directive
+     */
+    public function setValue($value): Directive
+    {
+        $this->value = $value;
         return $this;
     }
 
